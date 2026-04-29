@@ -437,6 +437,12 @@ header .navbar ul li a:hover{
   html{
     font-size: 55%;
   }
+  header .logo {
+    font-size: 1.5rem;
+  }
+  header .logo i {
+    font-size: 1.8rem;
+  }
   body{
     padding-right: 0;
   }
