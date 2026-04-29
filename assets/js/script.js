@@ -567,22 +567,4 @@ srtop.reveal('.experience .timeline .container', { interval: 400 });
 /* SCROLL CONTACT */
 srtop.reveal('.contact .container', { delay: 400 });
 srtop.reveal('.contact .container .form-group', { delay: 400 });
-// Visitor Counter Logic
-async function updateVisitorCount() {
-    try {
-        const response = await fetch('https://api.counterapi.dev/v1/vgvvlsa3145/vgvvlsa.dev/up');
-        const data = await response.json();
-        const countElement = document.getElementById('visitor-count');
-        if (countElement) {
-            countElement.innerText = data.count.toLocaleString();
-        }
-    } catch (error) {
-        console.error('Error fetching visitor count:', error);
-        const countElement = document.getElementById('visitor-count');
-        if (countElement) {
-            countElement.innerText = 'Online';
-        }
-    }
-}
 
-updateVisitorCount();
