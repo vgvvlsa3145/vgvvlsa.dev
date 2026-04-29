@@ -576,8 +576,7 @@ async function updateVisitorCount() {
         const data = await response.json();
         const countElement = document.getElementById('visitor-count');
         if (countElement) {
-            // Adding 20 to sync with the previous Google Analytics data
-            const syncedCount = data.count + 20;
+            const syncedCount = data.count;
             countElement.innerText = syncedCount.toLocaleString();
         }
     } catch (error) {
