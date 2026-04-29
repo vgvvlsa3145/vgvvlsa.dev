@@ -568,3 +568,25 @@ srtop.reveal('.experience .timeline .container', { interval: 400 });
 srtop.reveal('.contact .container', { delay: 400 });
 srtop.reveal('.contact .container .form-group', { delay: 400 });
 
+
+// Visitor Counter Logic with Offset to Sync with Google Analytics
+async function updateVisitorCount() {
+    try {
+        const response = await fetch('https://api.counterapi.dev/v1/vgvvlsa3145/vgvvlsa.dev/up');
+        const data = await response.json();
+        const countElement = document.getElementById('visitor-count');
+        if (countElement) {
+            // Adding 20 to sync with the previous Google Analytics data
+            const syncedCount = data.count + 20;
+            countElement.innerText = syncedCount.toLocaleString();
+        }
+    } catch (error) {
+        console.error('Error fetching visitor count:', error);
+        const countElement = document.getElementById('visitor-count');
+        if (countElement) {
+            countElement.innerText = '22'; // Fallback to last known synced count
+        }
+    }
+}
+
+updateVisitorCount();
